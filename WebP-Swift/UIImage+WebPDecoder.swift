@@ -12,7 +12,7 @@ import UIKit
 
 extension UIImage {
     
-    //Inits
+    //MARK: Inits
     convenience init(webpWithPath path: String) {
         let data = NSData(contentsOfFile: path)!
         self.init(cgImage: UIImage.webPDataToCGImage(data: data))
@@ -41,8 +41,9 @@ extension UIImage {
         self.init(cgImage: UIImage.webPDataToCGImage(data: data, withOptions: options))
     }
     
+    //MARK: WebP Decoder
     //Let's the magic begin
-    class private func webPDataToCGImage(data: NSData)->CGImage {
+    class private func webPDataToCGImage(data: NSData) -> CGImage {
         
         var w: CInt = 0
         var h: CInt = 0
@@ -65,7 +66,7 @@ extension UIImage {
         return UIImage.webPProviderToCGImage(provider: provider, width: w, height: h)
     }
     
-    class private func webPDataToCGImage(data: NSData, withOptions options: [String:Int32])->CGImage{
+    class private func webPDataToCGImage(data: NSData, withOptions options: [String:Int32]) -> CGImage {
         
         var w: CInt = 0
         var h: CInt = 0
@@ -118,7 +119,7 @@ extension UIImage {
     
     //MARK: UTILS
     //Get WebP image info (width and height)
-    static private func webPInfo(data: NSData, width: inout CInt, height: inout CInt)->Bool {
+    static private func webPInfo(data: NSData, width: inout CInt, height: inout CInt) -> Bool {
         let statusOk = Int32(1)
         if (WebPGetInfo(data.bytes.assumingMemoryBound(to: UInt8.self), data.length, &width, &height) == statusOk){
             return true
@@ -127,7 +128,7 @@ extension UIImage {
     }
     
     //Transform swift array into WebPDecoderConfig
-    static private func webPConfig(options: [String:Int32])->WebPDecoderConfig {
+    static private func webPConfig(options: [String:Int32]) -> WebPDecoderConfig {
         var config = WebPDecoderConfig()
         
         if let noFancyUpsampling = options["no_fancy_upsampling"] {
