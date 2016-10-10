@@ -15,7 +15,6 @@ let imageWithURL = UIImage(webpWithURL: url)
 
 //Simple Usage Example with options
 let options: [String : Int32] = ["no_fancy_upsampling":1,"bypass_filtering":1,"use_threads":1]
-
 let imageWithURLandOptions = UIImage(webpWithURL: url, andOptions: options)
 ```
 
@@ -37,5 +36,5 @@ let image = UIImage(webpWithData: NSData, andOptions: [String:Int32])
 
 Credits
 ========
-* WebP Library by [google](https://developers.google.com/speed/webp/download "libwebp")
-* "PNG transparency demonstration" Photo licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](https://en.wikipedia.org/wiki/Creative_Commons "Creative Commons Attribution-Share Alike 3.0 Unported") license by POV-Ray source code.
+* WebP Library by [Google](https://developers.google.com/speed/webp/download "libwebp")
+* "PNG transparency demonstration" photo licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](https://en.wikipedia.org/wiki/Creative_Commons "Creative Commons Attribution-Share Alike 3.0 Unported") license by POV-Ray source code.
