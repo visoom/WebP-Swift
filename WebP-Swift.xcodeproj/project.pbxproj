@@ -12,6 +12,8 @@
 		4D5ACA481DAAE55000C96F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ACA461DAAE55000C96F9F /* Main.storyboard */; };
 		4D5ACA4A1DAAE55000C96F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ACA491DAAE55000C96F9F /* Assets.xcassets */; };
 		4D5ACA4D1DAAE55000C96F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ACA4B1DAAE55000C96F9F /* LaunchScreen.storyboard */; };
+		4D5ACA551DAAE61E00C96F9F /* UIImage+WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */; };
+		4D5ACA581DAAE63000C96F9F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5ACA571DAAE63000C96F9F /* WebP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		4D5ACA491DAAE55000C96F9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D5ACA4C1DAAE55000C96F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5ACA4E1DAAE55000C96F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WebPDecoder.swift"; sourceTree = "<group>"; };
+		4D5ACA571DAAE63000C96F9F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = "WebP-Swift/Frameworks/WebP.framework"; sourceTree = "<group>"; };
+		4D5ACA591DAAE64F00C96F9F /* Header-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Header-Bridging.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5ACA581DAAE63000C96F9F /* WebP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				4D5ACA411DAAE55000C96F9F /* WebP-Swift */,
 				4D5ACA401DAAE55000C96F9F /* Products */,
+				4D5ACA561DAAE63000C96F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +63,22 @@
 			children = (
 				4D5ACA421DAAE55000C96F9F /* AppDelegate.swift */,
 				4D5ACA441DAAE55000C96F9F /* ViewController.swift */,
+				4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */,
+				4D5ACA591DAAE64F00C96F9F /* Header-Bridging.h */,
 				4D5ACA461DAAE55000C96F9F /* Main.storyboard */,
 				4D5ACA491DAAE55000C96F9F /* Assets.xcassets */,
 				4D5ACA4B1DAAE55000C96F9F /* LaunchScreen.storyboard */,
 				4D5ACA4E1DAAE55000C96F9F /* Info.plist */,
 			);
 			path = "WebP-Swift";
+			sourceTree = "<group>";
+		};
+		4D5ACA561DAAE63000C96F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D5ACA571DAAE63000C96F9F /* WebP.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4D5ACA3A1DAAE55000C96F9F /* Build configuration list for PBXProject "WebP-Swift" */;
+			buildConfigurationList = 4D5ACA3A1DAAE55000C96F9F /* Build configuration list for PBXProject "webp-swift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -137,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5ACA551DAAE61E00C96F9F /* UIImage+WebPDecoder.swift in Sources */,
 				4D5ACA451DAAE55000C96F9F /* ViewController.swift in Sources */,
 				4D5ACA431DAAE55000C96F9F /* AppDelegate.swift in Sources */,
 			);
@@ -260,10 +278,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HX736R42G8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WebP-Swift/Frameworks",
+				);
 				INFOPLIST_FILE = "WebP-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "visoom.WebP-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Header-Bridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -273,10 +296,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HX736R42G8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WebP-Swift/Frameworks",
+				);
 				INFOPLIST_FILE = "WebP-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "visoom.WebP-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Header-Bridging.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -284,7 +312,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D5ACA3A1DAAE55000C96F9F /* Build configuration list for PBXProject "WebP-Swift" */ = {
+		4D5ACA3A1DAAE55000C96F9F /* Build configuration list for PBXProject "webp-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D5ACA4F1DAAE55000C96F9F /* Debug */,
@@ -300,6 +328,7 @@
 				4D5ACA531DAAE55000C96F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
