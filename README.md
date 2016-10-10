@@ -1,6 +1,6 @@
 # WebP-Swift
 
-Simple WebP iOS Swift decoder to UIImage
+Simple iOS Swift WebP decoder to UIImage
 
 # Usage
 
