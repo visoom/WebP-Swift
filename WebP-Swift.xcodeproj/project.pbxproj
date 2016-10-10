@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4490C01DABE54C00631B10 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "webp-swift/Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		4D5ACA3F1DAAE55000C96F9F /* WebP-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebP-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5ACA421DAAE55000C96F9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5ACA441DAAE55000C96F9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		4D5ACA4E1DAAE55000C96F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WebPDecoder.swift"; sourceTree = "<group>"; };
 		4D5ACA571DAAE63000C96F9F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = "WebP-Swift/Frameworks/WebP.framework"; sourceTree = "<group>"; };
-		4D5ACA591DAAE64F00C96F9F /* Header-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Header-Bridging.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				4D5ACA421DAAE55000C96F9F /* AppDelegate.swift */,
 				4D5ACA441DAAE55000C96F9F /* ViewController.swift */,
 				4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */,
-				4D5ACA591DAAE64F00C96F9F /* Header-Bridging.h */,
+				4D4490C01DABE54C00631B10 /* Bridging-Header.h */,
 				4D5ACA461DAAE55000C96F9F /* Main.storyboard */,
 				4D5ACA491DAAE55000C96F9F /* Assets.xcassets */,
 				4D5ACA4B1DAAE55000C96F9F /* LaunchScreen.storyboard */,
@@ -286,7 +286,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "visoom.WebP-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Header-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -304,7 +304,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "visoom.WebP-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Header-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WebP-Swift/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

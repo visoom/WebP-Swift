@@ -1,6 +1,20 @@
 # WebP-Swift
 
-Simple iOS Swift WebP decoder to UIImage
+Simple iOS Swift WebP decoder to UIImage.
+The project use a standalone version of WebP library, without the use of cocoapods (or other dependency managers) to avoid problems with swift dynamic libraries.
+
+# Installation
+
+* Download the precompiled library from [Google Developers](https://developers.google.com/speed/webp/download "WebP Library")
+* Unzip the .tar.gz file and rename it: "WebP.framework" and put it in the project folder
+* Open Xcode project, target 'app', Build Phases and click "Other Framework" in Link Binary with Libraries
+* Select 'WebP.framework'
+* Add in your bridging header the reference to the WebP framework:
+```objc
+#import "webp/decode.h"
+```
+* Include 'UIImage+WebPDecoder.swift' in your project
+* Enjoy WebP Decoder 😃
 
 # Usage
 
@@ -36,5 +50,5 @@ let image = UIImage(webpWithData: NSData, andOptions: [String:Int32])
 
 Credits
 ========
-* WebP Library by [Google](https://developers.google.com/speed/webp/download "libwebp")
+* WebP Library by [Google](https://developers.google.com/speed/webp/download "WebP library")
 * "PNG transparency demonstration" photo licensed under the [Creative Commons Attribution-Share Alike 3.0 Unported](https://en.wikipedia.org/wiki/Creative_Commons "Creative Commons Attribution-Share Alike 3.0 Unported") license by POV-Ray source code.
