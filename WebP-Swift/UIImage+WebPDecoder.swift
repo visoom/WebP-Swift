@@ -11,7 +11,7 @@
 import UIKit
 
 //Let's free some memory
-private func freeWebPData(info: UnsafeMutableRawPointer?=nil, data: UnsafeRawPointer, size: Int) -> Void {
+private func freeWebPData(info: UnsafeMutableRawPointer, data: UnsafeRawPointer, size: Int) {
     free(UnsafeMutableRawPointer(mutating: data))
 }
 
