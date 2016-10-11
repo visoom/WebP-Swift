@@ -10,6 +10,11 @@
 
 import UIKit
 
+//Let's free some memory
+private func freeWebPData(info: UnsafeMutableRawPointer?=nil, data: UnsafeRawPointer, size: Int) -> Void {
+    free(UnsafeMutableRawPointer(mutating: data))
+}
+
 extension UIImage {
     
     //MARK: Inits
@@ -32,7 +37,7 @@ extension UIImage {
         let data = NSData(contentsOf: url)!
         self.init(cgImage: UIImage.webPDataToCGImage(data: data, withOptions: options))
     }
-	
+    
     convenience init(webpWithData data: NSData) {
         self.init(cgImage: UIImage.webPDataToCGImage(data: data))
     }
@@ -59,9 +64,7 @@ extension UIImage {
         //RGBA by default
         let rawData = WebPDecodeRGBA(data.bytes.assumingMemoryBound(to: UInt8.self), data.length, &w, &h)
         
-        provider = CGDataProvider(dataInfo: nil, data: rawData!, size: (Int(w)*Int(h)*4), releaseData: {
-            (tmpInfo,tmpData,tmpSize) in
-        })!
+        provider = CGDataProvider(dataInfo: nil, data: rawData!, size: (Int(w)*Int(h)*4), releaseData: freeWebPData)!
         
         return UIImage.webPProviderToCGImage(provider: provider, width: w, height: h)
     }
@@ -85,16 +88,14 @@ extension UIImage {
         //RGBA by default
         WebPDecode(data.bytes.assumingMemoryBound(to: UInt8.self), data.length, &config)
         
-        provider = CGDataProvider(dataInfo: &config, data: config.output.u.RGBA.rgba, size: (Int(w)*Int(h)*4), releaseData: {
-            (tmpInfo,tmpData,tmpSize) in
-        })!
-
+        provider = CGDataProvider(dataInfo: &config, data: config.output.u.RGBA.rgba, size: (Int(w)*Int(h)*4), releaseData: freeWebPData)!
+        
         return UIImage.webPProviderToCGImage(provider: provider, width: w, height: h)
     }
     
     //Generate CGImage from decoded data
     class private func webPProviderToCGImage(provider: CGDataProvider, width w: CInt, height h: CInt) -> CGImage {
-    
+        
         let bitmapWithAlpha = CGBitmapInfo(rawValue: CGImageAlphaInfo.last.rawValue)
         
         if let image = CGImage(
