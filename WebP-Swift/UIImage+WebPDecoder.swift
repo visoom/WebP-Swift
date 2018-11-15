@@ -55,6 +55,7 @@ extension UIImage {
         
         //Get image dimensions
         if (!UIImage.webPInfo(data: data, width: &w, height: &h)){
+            print("ERROR",w,h)
             return UIImage.empty
         }
         

@@ -14,6 +14,8 @@
 		4D5ACA4D1DAAE55000C96F9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5ACA4B1DAAE55000C96F9F /* LaunchScreen.storyboard */; };
 		4D5ACA551DAAE61E00C96F9F /* UIImage+WebPDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */; };
 		4D5ACA581DAAE63000C96F9F /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5ACA571DAAE63000C96F9F /* WebP.framework */; };
+		96BC7CE3219DA5E500078281 /* 3_webp_ll.webp in Resources */ = {isa = PBXBuildFile; fileRef = 96BC7CE1219DA5E500078281 /* 3_webp_ll.webp */; };
+		96BC7CE4219DA5E500078281 /* 3_webp_ll.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BC7CE2219DA5E500078281 /* 3_webp_ll.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		4D5ACA4E1DAAE55000C96F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5ACA541DAAE61E00C96F9F /* UIImage+WebPDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+WebPDecoder.swift"; sourceTree = "<group>"; };
 		4D5ACA571DAAE63000C96F9F /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = "WebP-Swift/Frameworks/WebP.framework"; sourceTree = "<group>"; };
+		96BC7CE1219DA5E500078281 /* 3_webp_ll.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3_webp_ll.webp; sourceTree = "<group>"; };
+		96BC7CE2219DA5E500078281 /* 3_webp_ll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_webp_ll.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5ACA411DAAE55000C96F9F /* WebP-Swift */,
+				96BC7CDA219DA4D100078281 /* Samples */,
 				4D5ACA401DAAE55000C96F9F /* Products */,
 				4D5ACA561DAAE63000C96F9F /* Frameworks */,
 			);
@@ -79,6 +84,15 @@
 				4D5ACA571DAAE63000C96F9F /* WebP.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96BC7CDA219DA4D100078281 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				96BC7CE2219DA5E500078281 /* 3_webp_ll.png */,
+				96BC7CE1219DA5E500078281 /* 3_webp_ll.webp */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +156,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BC7CE4219DA5E500078281 /* 3_webp_ll.png in Resources */,
 				4D5ACA4D1DAAE55000C96F9F /* LaunchScreen.storyboard in Resources */,
+				96BC7CE3219DA5E500078281 /* 3_webp_ll.webp in Resources */,
 				4D5ACA4A1DAAE55000C96F9F /* Assets.xcassets in Resources */,
 				4D5ACA481DAAE55000C96F9F /* Main.storyboard in Resources */,
 			);
