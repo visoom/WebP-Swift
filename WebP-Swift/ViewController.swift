@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         let imageWithURL = UIImage(webpWithURL: url)
         
         //Simple usage example with options
-        let options: [String : Int32] = ["no_fancy_upsampling":1,"bypass_filtering":1,"use_threads":1]
-        let imageWithURLandOptions = UIImage(webpWithURL: url, andOptions: options)
+        //let options: [String : Int32] = ["no_fancy_upsampling":1,"bypass_filtering":1,"use_threads":1]
+        //let imageWithURLandOptions = UIImage(webpWithURL: url, andOptions: options)
         
         //Setting Image
         self.imageView.image = imageWithURL
